@@ -31,5 +31,5 @@ def make_long_subject(subject):
 def make_short_subject(subject):
     result = short_subjects[subject["subject"]]
     if "room" in subject:
-        result = subject["room"] + " " + result
+        result = u"{:4} {}".format(subject["room"], result)
     return result
