@@ -40,6 +40,20 @@ def introduction(message):
 		intro_message += command + "\n"
 	bot.send_message(message.chat.id, intro_message, True)
 
+@bot.message_handler(commands = ['today'])
+def today(message):
+    timetable = "\n".join(
+        map(timetable.make_short_subject,
+            timetable.get_today_subjects()))
+    bot.send_message(message.chat.id, timetable)
+
+@bot.message_handler(commands = ['tomorrow'])
+def tomorrow(message):
+    timetable = "\n".join(
+        map(timetable.make_short_subject,
+            timetable.get_tomorrow_subjects()))
+    bot.send_message(message.chat.id, timetable)
+
 bot.polling()
 while True:
     time.sleep(100)
