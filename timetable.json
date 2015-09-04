@@ -1,0 +1,130 @@
+[
+    {
+        "day": "monday",
+        "classes": [
+            {
+                "subject": "english",
+                "room": "782",
+            },
+            {
+                "subject": "diff_eq",
+                "room": "613",
+            },
+            {
+                "subject": "practicum",
+                "room": "П-5",
+            },
+            {
+                "subject": "pe",
+            }
+        ]
+    },
+
+    {
+        "day": "tuesday",
+        "classes": [
+            {
+                "subject": "practicum",
+                "room": "515",
+            },
+            {
+                "subject": "calculus",
+                "room": "П-14",
+            },
+            {
+                "subject": "statistics",
+                "room": "507",
+            },
+            {
+                "subject": "english",
+                "room": "787",
+            },
+            {
+                "subject": "calculus",
+                "room": "713",
+            }
+        ]
+    },
+
+    {
+        "day": "wednesday",
+        "classes": [
+            {
+                "subject": "english",
+                "room": "782",
+            },
+            {
+                "subject": "calculus",
+                "room": "П-6",
+            },
+            {
+                "subject": "diff_eq",
+                "room": "П-14",
+            },
+        ]
+    },
+
+    {
+        "day": "thursday",
+        "classes": [
+            {
+                "subject": "os",
+                "room": "П-13",
+            },
+            {
+                "subject": "os",
+                "room": "П-13",
+            },
+            {
+                "subject": "calculus",
+                "room": "72",
+            },
+            {
+                "subject": "numerical",
+                "room": "П-14",
+            },
+            {
+                "subject": "practicum",
+                "room": "678",
+            }
+        ]
+    },
+
+    {
+        "day": "friday",
+        "classes": [
+            {
+                "subject": "empty",
+            },
+            {
+                "subject": "pe",
+            },
+            {
+                "subject": "physics",
+                "room": "П-11",
+            },
+            {
+                "subject": "physics",
+                "room": "508",
+            },
+            {
+                "subject": "english",
+                "room": "783",
+            }
+        ]
+    },
+
+    {
+        "day": "saturday",
+        "classes": [
+            {
+                "subject": "philosophy",
+                "room": "П-14",
+            },
+            {
+                "subject": "philosophy",
+                "room": "505",
+            },
+        ]
+    },
+]
