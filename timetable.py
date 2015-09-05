@@ -22,15 +22,13 @@ def get_tomorrow_subjects():
 
 
 def make_long_subject(subject):
-    result = ""
-    if "start_hour" in subject and "end_hour" in subject:
-        start_time = subject["start_hour"] + ":" + subject["start_minute"]
-        start_end = subject["end_hour"] + ":" + subject["end_minute"]
-        result +=  start_time + " - " + start_end + ", "
-    result += subjects[subject["subject"]]
+    result = []
+    if "start" in subject and "end" in subject:
+        result.append("{} - {}".format(subject["start"], subject["end"]))
+    result.append(subjects[subject["subject"]])
     if "room" in subject:
-        result += ", " + subject["room"]
-    return result
+        result.append(subject["room"])
+    return ", ".join(result)
 
 
 def make_short_subject(subject):
