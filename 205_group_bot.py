@@ -9,9 +9,9 @@ import timetable
 bot = telebot.TeleBot(bot_private_constants.api_token)
 
 commands_with_description = [
-	"/group_list - Список группы",
-	"/shuffled_list - Перемешанный список группы",
-	"/random_person - Случайный человек",
+	"/group_list — Список группы",
+	"/shuffled_list — Перемешанный список группы",
+	"/random_person — Случайный человек",
 	"/today — Расписание на сегодня",
 	"/tomorrow — Расписание на завтра"
 ]
