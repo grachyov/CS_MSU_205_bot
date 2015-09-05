@@ -4,18 +4,38 @@
         "classes": [
             {
                 "subject": "english",
-                "room": "782"
+                "room": "782",
+                "is_lecture": "False",
+                "start_hour": "8",
+                "start_minute": "45",
+                "end_hour": "10",
+                "end_minute": "20"
             },
             {
                 "subject": "diff_eq",
-                "room": "613"
+                "room": "613",
+                "is_lecture": "False",
+                "start_hour": "10",
+                "start_minute": "30",
+                "end_hour": "12",
+                "end_minute": "05"
             },
             {
-                "subject": "practicum",
-                "room": "П-5"
+                "subject": "statistics",
+                "room": "П-5",
+                "is_lecture": "True",
+                "start_hour": "12",
+                "start_minute": "15",
+                "end_hour": "13",
+                "end_minute": "50"
             },
             {
-                "subject": "pe"
+                "subject": "pe",
+                "is_lecture": "False",
+                "start_hour": "14",
+                "start_minute": "30",
+                "end_hour": "16",
+                "end_minute": "00"
             }
         ]
     },
@@ -25,23 +45,48 @@
         "classes": [
             {
                 "subject": "practicum",
-                "room": "515"
+                "room": "515",
+                "is_lecture": "True",
+                "start_hour": "8",
+                "start_minute": "45",
+                "end_hour": "10",
+                "end_minute": "20"
             },
             {
                 "subject": "calculus",
-                "room": "П-14"
+                "room": "П-14",
+                "is_lecture": "True",
+                "start_hour": "10",
+                "start_minute": "30",
+                "end_hour": "12",
+                "end_minute": "05"
             },
             {
                 "subject": "statistics",
-                "room": "507"
+                "room": "507",
+                "is_lecture": "False",
+                "start_hour": "12",
+                "start_minute": "15",
+                "end_hour": "13",
+                "end_minute": "50"
             },
             {
                 "subject": "english",
-                "room": "787"
+                "room": "787",
+                "is_lecture": "False",
+                "start_hour": "14",
+                "start_minute": "35",
+                "end_hour": "16",
+                "end_minute": "10"
             },
             {
                 "subject": "calculus",
-                "room": "713"
+                "room": "713",
+                "is_lecture": "False",
+                "start_hour": "16",
+                "start_minute": "20",
+                "end_hour": "17",
+                "end_minute": "55"
             }
         ]
     },
@@ -51,15 +96,30 @@
         "classes": [
             {
                 "subject": "english",
-                "room": "782"
+                "room": "782",
+                "is_lecture": "False",
+                "start_hour": "8",
+                "start_minute": "45",
+                "end_hour": "10",
+                "end_minute": "20"
             },
             {
                 "subject": "calculus",
-                "room": "П-6"
+                "room": "П-6",
+                "is_lecture": "True",
+                "start_hour": "10",
+                "start_minute": "30",
+                "end_hour": "12",
+                "end_minute": "05"
             },
             {
                 "subject": "diff_eq",
-                "room": "П-14"
+                "room": "П-14",
+                "is_lecture": "True",
+                "start_hour": "12",
+                "start_minute": "15",
+                "end_hour": "13",
+                "end_minute": "50"
             }
         ]
     },
@@ -69,23 +129,48 @@
         "classes": [
             {
                 "subject": "os",
-                "room": "П-13"
+                "room": "П-13",
+                "is_lecture": "True",
+                "start_hour": "8",
+                "start_minute": "45",
+                "end_hour": "10",
+                "end_minute": "20"
             },
             {
                 "subject": "os",
-                "room": "П-13"
+                "room": "П-13",
+                "is_lecture": "True",
+                "start_hour": "10",
+                "start_minute": "30",
+                "end_hour": "12",
+                "end_minute": "05"
             },
             {
                 "subject": "calculus",
-                "room": "72"
+                "room": "72",
+                "is_lecture": "False",
+                "start_hour": "12",
+                "start_minute": "15",
+                "end_hour": "13",
+                "end_minute": "50"
             },
             {
                 "subject": "numerical",
-                "room": "П-14"
+                "room": "П-14",
+                "is_lecture": "True",
+                "start_hour": "14",
+                "start_minute": "35",
+                "end_hour": "16",
+                "end_minute": "10"
             },
             {
                 "subject": "practicum",
-                "room": "678"
+                "room": "678",
+                "is_lecture": "False",
+                "start_hour": "16",
+                "start_minute": "20",
+                "end_hour": "17",
+                "end_minute": "55"
             }
         ]
     },
@@ -94,22 +179,46 @@
         "day": "friday",
         "classes": [
             {
-                "subject": "empty"
+                "subject": "empty",
+                "start_hour": "8",
+                "start_minute": "45",
+                "end_hour": "10",
+                "end_minute": "20"
             },
             {
-                "subject": "pe"
+                "subject": "pe",
+                "is_lecture": "False",
+                "start_hour": "10",
+                "start_minute": "00",
+                "end_hour": "11",
+                "end_minute": "30"
             },
             {
                 "subject": "physics",
-                "room": "П-11"
+                "room": "П-11",
+                "is_lecture": "True",
+                "start_hour": "12",
+                "start_minute": "50",
+                "end_hour": "14",
+                "end_minute": "25"
             },
             {
                 "subject": "physics",
-                "room": "508"
+                "room": "508",
+                "is_lecture": "False",
+                "start_hour": "14",
+                "start_minute": "35",
+                "end_hour": "16",
+                "end_minute": "10"
             },
             {
                 "subject": "english",
-                "room": "783"
+                "room": "783",
+                "is_lecture": "False",
+                "start_hour": "16",
+                "start_minute": "20",
+                "end_hour": "17",
+                "end_minute": "55"
             }
         ]
     },
@@ -119,11 +228,30 @@
         "classes": [
             {
                 "subject": "philosophy",
-                "room": "П-14"
+                "room": "П-14",
+                "is_lecture": "True",
+                "start_hour": "8",
+                "start_minute": "45",
+                "end_hour": "10",
+                "end_minute": "20"
             },
             {
                 "subject": "philosophy",
-                "room": "505"
+                "room": "505",
+                "is_lecture": "False",
+                "start_hour": "10",
+                "start_minute": "30",
+                "end_hour": "12",
+                "end_minute": "05"
+            }
+        ]
+    },
+
+    {
+        "day": "sunday",
+        "classes": [
+            {
+                "subject": "empty_day"
             }
         ]
     }
