@@ -26,7 +26,7 @@ def make_long_subject(subject):
     if "start_hour" in subject and "end_hour" in subject:
         start_time = subject["start_hour"] + ":" + subject["start_minute"]
         start_end = subject["end_hour"] + ":" + subject["end_minute"]
-        result +=  start_time + " - " + start_end + " "
+        result +=  start_time + " - " + start_end + ", "
     result += subjects[subject["subject"]]
     if "room" in subject:
         result += ", " + subject["room"]
