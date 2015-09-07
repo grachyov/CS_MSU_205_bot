@@ -62,10 +62,10 @@ def tomorrow(message):
 def answer_who_is_question(message):
     bot.send_message(message.chat.id, random.choice(bot_private_constants.group_list))
 
-@bot.message_handler(regexp="(?i)Тервер( [1-9]\d*\.[1-9]\d*)+")
+@bot.message_handler(regexp="(?i)Teorver( [0-9]\d*\.[0-9]\d*)+")
 def send_task_pic(message):
-    for task in re.findall("[1-9]\d*\.[1-9]\d*)", message):
-        with open("statistics/" + task + ".png" as pic:
+    for task in re.findall("([0-9]\d*\.[0-9]\d*)", message.text):
+        with open("Taskbooks/Statistics/Zubkov/" + task + ".png", "rb") as pic:
             bot.send_photo(message.chat.id, pic)
 
 bot.polling(none_stop=True)
