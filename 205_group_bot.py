@@ -57,6 +57,10 @@ def tomorrow(message):
             timetable.get_tomorrow_subjects()))
     bot.send_message(message.chat.id, timetable_string)
 
+@bot.message_handler(regexp="(?i)^Кто|Кого(.*?)\?$")
+def answer_who_is_question(message):
+    bot.send_message(message.chat.id, random.choice(bot_private_constants.group_list))
+
 bot.polling(none_stop=True)
 while True:
     time.sleep(100)
