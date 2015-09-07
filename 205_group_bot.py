@@ -5,6 +5,7 @@ import time
 import random
 import bot_private_constants
 import timetable
+import re
 
 bot = telebot.TeleBot(bot_private_constants.api_token)
 
@@ -60,6 +61,12 @@ def tomorrow(message):
 @bot.message_handler(regexp="(?i)(?=Кто|Кого)(.*?)\?$")
 def answer_who_is_question(message):
     bot.send_message(message.chat.id, random.choice(bot_private_constants.group_list))
+
+@bot.message_handler(regexp="(?i)Тервер( [1-9]\d*\.[1-9]\d*)+")
+def send_task_pic(message):
+    for task in re.findall("[1-9]\d*\.[1-9]\d*)", message):
+        with open("statistics/" + task + ".png" as pic:
+            bot.send_photo(message.chat.id, pic)
 
 bot.polling(none_stop=True)
 while True:
