@@ -6,7 +6,7 @@
                 "subject": "english",
                 "room": "782",
                 "is_lecture": "False",
-                "start": "8:45",
+                "start": "08:45",
                 "end": "10:20"
             },
             {
@@ -39,7 +39,7 @@
                 "subject": "practicum",
                 "room": "515",
                 "is_lecture": "True",
-                "start": "8:45",
+                "start": "08:45",
                 "end": "10:20"
             },
             {
@@ -80,7 +80,7 @@
                 "subject": "english",
                 "room": "782",
                 "is_lecture": "False",
-                "start": "8:45",
+                "start": "08:45",
                 "end": "10:20"
             },
             {
@@ -107,7 +107,7 @@
                 "subject": "os",
                 "room": "П-13",
                 "is_lecture": "True",
-                "start": "8:45",
+                "start": "08:45",
                 "end": "10:20"
             },
             {
@@ -146,7 +146,7 @@
         "classes": [
             {
                 "subject": "empty",
-                "start": "8:45",
+                "start": "08:45",
                 "end": "10:20"
             },
             {
@@ -186,7 +186,7 @@
                 "subject": "philosophy",
                 "room": "П-14",
                 "is_lecture": "True",
-                "start": "8:45",
+                "start": "08:45",
                 "end": "10:20"
             },
             {

@@ -57,6 +57,6 @@ def tomorrow(message):
             timetable.get_tomorrow_subjects()))
     bot.send_message(message.chat.id, timetable_string)
 
-bot.polling()
+bot.polling(none_stop=True)
 while True:
     time.sleep(100)
