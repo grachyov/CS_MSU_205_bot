@@ -26,9 +26,10 @@ def get_next_subject():
     subjects = list(reversed(get_today_subjects()))
     for x in range(len(subjects)):
         if is_now(now, subjects[x]):
-            return subjects[x], get_time_delta(now, subjects[x]["start"])
+            return subjects[x], get_time_delta(subjects[x]["end"], now)
         if is_later(now, subjects[x]):
-            return subjects[x], get_time_delta(subjects[x]["start"], now)
+            return subjects[x], get_time_delta(now, subjects[x]["start"])
+    return None, None
 
 
 def get_tomorrow_subjects():
