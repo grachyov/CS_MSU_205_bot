@@ -46,7 +46,7 @@ def random_person(message):
 
 @bot.message_handler(commands = ['help', 'start'])
 def introduction(message):
-	intro_message = "Я помощник 205 группы. Умею отвечать на команды:\n\n"
+	intro_message = "Я помощник 205 группы и умею отвечать на запросы:\n\n"
 	for command in commands_with_description:
 		intro_message += command + "\n"
 	bot.send_message(message.chat.id, intro_message, True)
