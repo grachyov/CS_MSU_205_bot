@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import telebot
-import time
-import random
 import bot_private_constants
 import timetable
+
+import telebot
+
+import json
+import time
+import random
 import re
 
 bot = telebot.TeleBot(bot_private_constants.api_token)
+
+S = json.load(open("strings.json"))
 
 commands_with_description = [
 	"/group_list — Список группы",
@@ -58,14 +63,40 @@ def tomorrow(message):
             timetable.get_tomorrow_subjects()))
     bot.send_message(message.chat.id, timetable_string)
 
-@bot.message_handler(regexp="(?i)(?=Кто|Кого)(.*?)\?$")
+@bot.message_handler(commands = ['timetable'])
+def show_timetable(message):
+    timetable_string = ""
+    for day, dayname in enumerate(S['weekdays'][:-1]):
+        timetable_string += "{}\n{}\n\n".format(
+                dayname,
+                "\n".join(
+                    map(timetable.make_long_subject,
+                        timetable.get_subjects(day))))
+    bot.send_message(message.chat.id, timetable_string)
+
+@bot.message_handler(commands = ['now'])
+def tomorrow(message):
+    subject, tm = timetable.get_next_subject()
+    if subject == None:
+        bot.send_message(message.chat.id, S["no_subject"])
+    else:
+        if tm > 0:
+            fmt = S["next_subject"]
+        else:
+            fmt = S["current_subject"]
+        interval = "{:02}:{:02}".format(abs(int(tm)) % 60, abs(int(tm)) // 60)
+        message_string = fmt.format(subject=timetable.make_inline_subject(
+            subject), interval=interval)
+        bot.send_message(message.chat.id, message_string)
+
+@bot.message_handler(regexp='(?i)(?=Кто|Кого)(.*?)\?$')
 def answer_who_is_question(message):
     bot.send_message(message.chat.id, random.choice(bot_private_constants.group_list))
 
-@bot.message_handler(regexp="(?i)Teorver( [0-9]\d*\.[0-9]\d*)+")
+@bot.message_handler(regexp='(?i)Teorver( [0-9]\d*\.[0-9]\d*)+')
 def send_task_pic(message):
     for task in re.findall("([0-9]\d*\.[0-9]\d*)", message.text):
-        with open("Taskbooks/Statistics/Zubkov/" + task + ".png", "rb") as pic:
+        with open('Taskbooks/Statistics/Zubkov/' + task + '.png', 'rb') as pic:
             bot.send_photo(message.chat.id, pic)
 
 bot.polling(none_stop=True)
