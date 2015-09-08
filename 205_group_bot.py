@@ -84,7 +84,8 @@ def tomorrow(message):
             fmt = S["next_subject"]
         else:
             fmt = S["current_subject"]
-        interval = "{:02}:{:02}".format(abs(int(tm)) % 60, abs(int(tm)) // 60)
+        interval = "{:02}:{:02}".format(abs(int(tm)) // 3600,
+                abs(int(tm)) // 60 % 60)
         message_string = fmt.format(subject=timetable.make_inline_subject(
             subject), interval=interval)
         bot.send_message(message.chat.id, message_string)
