@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import telebot
-import time
-import random
 import bot_private_constants
 import timetable
+
+import telebot
+
+import json
+import time
+import random
 import re
 
 bot = telebot.TeleBot(bot_private_constants.api_token)
+
+S = json.load(open("strings.json"))
 
 commands_with_description = [
 	"/group_list — Список группы",
@@ -56,6 +61,17 @@ def tomorrow(message):
     timetable_string = "\n".join(
         map(timetable.make_long_subject,
             timetable.get_tomorrow_subjects()))
+    bot.send_message(message.chat.id, timetable_string)
+
+@bot.message_handler(commands = ['timetable'])
+def show_timetable(message):
+    timetable_string = ""
+    for day, dayname in enumerate(S["weekdays"][:-1]):
+        timetable_string += "{}\n{}\n\n".format(
+                dayname,
+                "\n".join(
+                    map(timetable.make_long_subject,
+                        timetable.get_subjects(day))))
     bot.send_message(message.chat.id, timetable_string)
 
 @bot.message_handler(regexp="(?i)(?=Кто|Кого)(.*?)\?$")
