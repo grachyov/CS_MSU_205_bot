@@ -24,7 +24,7 @@ def get_tomorrow_subjects():
 def make_long_subject(subject):
     result = []
     if "start" in subject and "end" in subject:
-        result.append("{} — {}".format(subject["start"], subject["end"]))
+        result.append("{}-{}".format(subject["start"], subject["end"]))
     result.append(subjects[subject["subject"]])
     if "room" in subject:
         result.append(subject["room"])
