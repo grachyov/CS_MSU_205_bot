@@ -23,7 +23,7 @@ def get_time_delta(tm1, tm2):
 
 def get_next_subject():
     now = time.strftime("%H:%M")
-    subjects = list(reversed(get_today_subjects()))
+    subjects = get_today_subjects()
     for x in range(len(subjects)):
         if is_now(now, subjects[x]):
             return subjects[x], get_time_delta(subjects[x]["end"], now)
