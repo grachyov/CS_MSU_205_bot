@@ -80,17 +80,20 @@ def show_timetable(message):
 def tomorrow(message):
     subject, tm = timetable.get_next_subject()
     if subject == None:
-        bot.send_message(message.chat.id, S["no_subject"])
+        if tm == 0:
+            fmt = S["no_subject"]
+        else:
+            fmt = S["weekend"]
     else:
+        subject = timetable.make_inline_subject(subject)
         if tm > 0:
             fmt = S["next_subject"]
         else:
             fmt = S["current_subject"]
-        interval = "{:02}:{:02}".format(abs(int(tm)) // 3600,
-                abs(int(tm)) // 60 % 60)
-        message_string = fmt.format(subject=timetable.make_inline_subject(
-            subject), interval=interval)
-        bot.send_message(message.chat.id, message_string)
+    interval = "{:02}:{:02}".format(abs(int(tm)) // 3600,
+            abs(int(tm)) // 60 % 60)
+    message_string = fmt.format(subject=subject, interval=interval)
+    bot.send_message(message.chat.id, message_string)
 
 @bot.message_handler(regexp='(?i)(?=Кто|Кого)(.*?)\?$')
 def answer_who_is_question(message):

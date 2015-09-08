@@ -23,13 +23,19 @@ def get_time_delta(tm1, tm2):
 
 def get_next_subject():
     now = time.strftime("%H:%M")
+
+    if time.localtime().tm_wday == 6:
+        return None, get_time_delta(now, "00:00") + 24 * 3600
+
     subjects = get_today_subjects()
     for x in range(len(subjects)):
         if is_now(now, subjects[x]):
             return subjects[x], get_time_delta(subjects[x]["end"], now)
         if is_later(now, subjects[x]):
             return subjects[x], get_time_delta(now, subjects[x]["start"])
-    return None, None
+    if time.localtime().tm_wday == 6:
+        return None, get_time_delta(now, "00:00") + 24 * 3600
+    return None, 0
 
 
 def get_tomorrow_subjects():
