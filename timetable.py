@@ -81,6 +81,10 @@ def make_short_subject(subject):
 def make_human_time(tm):
     hours, mins = tuple(map(int, tm.split(':')))
     if hours > 0:
-        return "{} час{} {} минут{}".format(hours, s1(hours), mins, s2(mins))
+        if mins > 0:
+            return "{} час{} {} минут{}".format(hours, s1(hours),
+                    mins, s2(mins))
+        else:
+            return "{} час{}".format(hours, s1(hours))
     else:
         return "{} минут{}".format(mins, s2(mins))
