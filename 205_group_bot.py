@@ -66,7 +66,7 @@ def tomorrow(message):
 @bot.message_handler(commands = ['timetable'])
 def show_timetable(message):
     timetable_string = ""
-    for day, dayname in enumerate(S["weekdays"][:-1]):
+    for day, dayname in enumerate(S['weekdays'][:-1]):
         timetable_string += "{}\n{}\n\n".format(
                 dayname,
                 "\n".join(
@@ -74,14 +74,14 @@ def show_timetable(message):
                         timetable.get_subjects(day))))
     bot.send_message(message.chat.id, timetable_string)
 
-@bot.message_handler(regexp="(?i)(?=Кто|Кого)(.*?)\?$")
+@bot.message_handler(regexp='(?i)(?=Кто|Кого)(.*?)\?$')
 def answer_who_is_question(message):
     bot.send_message(message.chat.id, random.choice(bot_private_constants.group_list))
 
-@bot.message_handler(regexp="(?i)Teorver( [0-9]\d*\.[0-9]\d*)+")
+@bot.message_handler(regexp='(?i)Teorver( [0-9]\d*\.[0-9]\d*)+')
 def send_task_pic(message):
     for task in re.findall("([0-9]\d*\.[0-9]\d*)", message.text):
-        with open("Taskbooks/Statistics/Zubkov/" + task + ".png", "rb") as pic:
+        with open('Taskbooks/Statistics/Zubkov/' + task + '.png', 'rb') as pic:
             bot.send_photo(message.chat.id, pic)
 
 bot.polling(none_stop=True)
