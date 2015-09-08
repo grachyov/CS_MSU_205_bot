@@ -1,5 +1,6 @@
 # CS_MSU_205_bot
 [Телеграм-бот-помощник 205 группы](https://telegram.me/CS_MSU_205_bot)
+
 Для работы с Telegram API используем [pyTelegramBotAPI](https://github.com/eternnoir/pyTelegramBotAPI)
 
 Pull requests are welcome! 👾
