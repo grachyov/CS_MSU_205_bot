@@ -19,7 +19,9 @@ commands_with_description = [
 	"/shuffled_list — Перемешанный список группы",
 	"/random_person — Случайный человек",
 	"/today — Расписание на сегодня",
-	"/tomorrow — Расписание на завтра"
+	"/tomorrow — Расписание на завтра",
+    "/timetable — Полное расписание",
+    "/now — А что сейчас?"
 ]
 
 @bot.message_handler(commands = ['shuffled_list'])
@@ -44,7 +46,7 @@ def random_person(message):
 
 @bot.message_handler(commands = ['help', 'start'])
 def introduction(message):
-	intro_message = "Я помощник 205 группы.\nСделайте меня лучше: https://github.com/grachyov/CS_MSU_205_bot\n\nЯ уже отвечаю на команды:\n\n"
+	intro_message = "Я помощник 205 группы. Умею отвечать на команды:\n\n"
 	for command in commands_with_description:
 		intro_message += command + "\n"
 	bot.send_message(message.chat.id, intro_message, True)
