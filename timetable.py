@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import json
 import time
+from pluralization import s1, s2
 
 timetable = json.load(open("timetable.json"))
 subjects = json.load(open("subjects.json"))
@@ -75,3 +76,15 @@ def make_short_subject(subject):
     if "room" in subject:
         result = u"{:4} {}".format(subject["room"], result)
     return result
+
+
+def make_human_time(tm):
+    hours, mins = tuple(map(int, tm.split(':')))
+    if hours > 0:
+        if mins > 0:
+            return "{} час{} {} минут{}".format(hours, s1(hours),
+                    mins, s2(mins))
+        else:
+            return "{} час{}".format(hours, s1(hours))
+    else:
+        return "{} минут{}".format(mins, s2(mins))
