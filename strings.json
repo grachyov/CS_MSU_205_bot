@@ -9,5 +9,6 @@
         "Воскресенье"
     ],
     "current_subject": "Сейчас идёт {subject}.\nПара будет продолжаться ещё {interval}.",
-    "next_subject": "Следующая пара: {subject}.\nНачало через {interval}."
+    "next_subject": "Следующая пара: {subject}.\nНачало через {interval}.",
+    "no_subject": "Пар в ближайшее время нет."
 }
