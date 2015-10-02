@@ -8,6 +8,7 @@ import telebot
 import json
 import time
 import random
+import os.path
 import re
 
 bot = telebot.TeleBot(bot_private_constants.api_token)
@@ -102,8 +103,10 @@ def answer_who_is_question(message):
 @bot.message_handler(regexp='(?i)Teorver( [0-9]\d*\.[0-9]\d*)+')
 def send_task_pic(message):
     for task in re.findall("([0-9]\d*\.[0-9]\d*)", message.text):
-        with open('Taskbooks/Statistics/Zubkov/' + task + '.png', 'rb') as pic:
-            bot.send_photo(message.chat.id, pic)
+        path = 'Taskbooks/Statistics/Zubkov/' + task + '.png'
+        if os.path.isfile(path):
+            with open(path, 'rb') as pic:
+                bot.send_photo(message.chat.id, pic)
 
 bot.polling(none_stop=True)
 while True:
