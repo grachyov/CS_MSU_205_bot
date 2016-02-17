@@ -12,4 +12,4 @@ def s2(x):
     elif 2 <= x % 10 <= 4:
         return "ы"
     else:
-        return "а"
+        return "у"
